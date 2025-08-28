@@ -4,7 +4,10 @@ from app.schemas.models import CharacterRequest, CharacterResponse
 from app.chains.pipeline import graph
 from app.api.responses import error_responses
 
-router = APIRouter(prefix="/api")
+router = APIRouter(
+    prefix="/api",
+    tags=["Endpoints"]
+)
 
 @router.get("/", include_in_schema=False)
 def index():
