@@ -11,4 +11,7 @@ def generate_character_story(req: CharacterRequest):
     if not result.get("is_character"):
         raise HTTPException(status_code=400, detail=result.get("error_message"))
 
-    return CharacterResponse(**result)
+    return CharacterResponse(
+        eneatype_number=result["eneatype_number"],
+        character_story=result["character_story"]
+    )
