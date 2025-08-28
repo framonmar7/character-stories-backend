@@ -6,7 +6,7 @@ from app.api.responses import error_responses
 
 router = APIRouter(prefix="/api")
 
-@router.get("/")
+@router.get("/", include_in_schema=False)
 def index():
     return {
         "message": "Welcome to the Character Stories API",
