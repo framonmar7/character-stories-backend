@@ -6,6 +6,16 @@ from app.api.responses import error_responses
 
 router = APIRouter(prefix="/api")
 
+@router.get("/")
+def index():
+    return {
+        "message": "Welcome to the Character Stories API",
+        "endpoints": {
+            "generate_character_story": "/api/generate"
+        },
+        "docs": "/docs"
+    }
+
 @router.post("/generate", response_model=CharacterResponse, responses=error_responses)
 def generate_character_story(req: CharacterRequest):
     try:
