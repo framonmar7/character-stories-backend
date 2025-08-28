@@ -14,11 +14,10 @@ def transform_validation(inputs: dict) -> dict:
     return {
         "is_character": is_character,
         "character_description": inputs["user_input"] if is_character else None,
-        "error_message": None if is_character else "Please describe a character with a name, traits, and a conflict."
     }
 
 validation_transform = TransformChain(
     input_variables=["validation_raw", "user_input"],
-    output_variables=["is_character", "character_description", "error_message"],
+    output_variables=["is_character", "character_description"],
     transform=transform_validation
 )

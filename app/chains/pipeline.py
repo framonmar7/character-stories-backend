@@ -7,7 +7,6 @@ from app.chains.story import story_chain
 class CharacterState(TypedDict, total=False):
     user_input: str
     is_character: bool
-    error_message: str
     character_description: str
     eneatype_number: str
     eneatype_explanation: str
